@@ -175,10 +175,30 @@ addEvent(window, 'click', function (event) {
        showNextInstr.innerHTML = "(Now observe how glucose measurement changes)";
       }, 050);
     }, 250);
-    chew();
+
+// silly implementation of chewing 3 times
+        setTimeout(function() {chew();
+            setTimeout(function() {
+                swallow();
+                    setTimeout(function() {
+                      chew();
+                          setTimeout(function() {
+                          swallow();
+                            setTimeout(function() {
+                            chew();
+                              setTimeout(function() {
+                            swallow();
+                        }, 500);
+                        }, 500);
+                      }, 500);
+                }, 500);
+            }, 500);
+        }, 500);
+
 
     return false;
   });
+
 
 function swallow(){
   var open = document.getElementById("bigHead");
