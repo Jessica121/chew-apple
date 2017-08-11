@@ -1,32 +1,45 @@
 // glucose meter draw by canvas
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
+clearGlucoseColor();
+
+
+function clearGlucoseColor(){
+  // glucose meter draw by canvas
 ctx.fillStyle = "white";
 ctx.fillRect(0,450,100,500);
-
+swallow();
+}
 
 function changeGlucoseApple(){
   // glucose meter draw by canvas
-ctx.fillStyle = "orange";
+ctx.fillStyle = "green";
 ctx.fillRect(0,250,100,500);//apple 2
-
+var changeExp = document.getElementById("gluExp");
+changeExp.innerHTML = "Apple makes your glucose rise mildly";
 }
 
 function changeGlucoseCake(){
   // glucose meter draw by canvas
 ctx.fillStyle = "red";
 ctx.fillRect(0,0,100,500); //cupcake 4
+var changeExp = document.getElementById("gluExp");
+changeExp.innerHTML = "Cupcake makes your glucose rise steeply";
 
 }
 function changeGlucosePotato(){
   // glucose meter draw by canvas
-ctx.fillStyle = "green";
+ctx.fillStyle = "orange";
 ctx.fillRect(0,150,100,500);
+var changeExp = document.getElementById("gluExp");
+changeExp.innerHTML = "Potato makes your glucose rise more";
 }
 function changeGlucoseChik(){
   // glucose meter draw by canvas
 ctx.fillStyle = "blue";
 ctx.fillRect(0,350,100,500);//chicken 1
+var changeExp = document.getElementById("gluExp");
+changeExp.innerHTML = "Chicken dosen't rise your glucose significantly";
 
 }
 
@@ -122,6 +135,7 @@ addEvent(window, 'click', function (event) {
     if (e.stopPropagation) e.stopPropagation(); 
 
     var el = document.getElementById(e.dataTransfer.getData('Text'));
+
     // el.id == food's id
     if(el.id == "one"){
         changeGlucoseCake();
@@ -153,7 +167,7 @@ addEvent(window, 'click', function (event) {
           }
           clearInterval(t); 
         } else {
-          y.style.opacity -= 0.1;
+          y.style.opacity -= 0.3;
         }
        showNextInstr.innerHTML = "(Now observe how glucose measurement changes)";
       }, 050);
@@ -166,8 +180,9 @@ addEvent(window, 'click', function (event) {
 function swallow(){
 
 var open = document.getElementById("bigHead");
-    open.src = "https://trello-attachments.s3.amazonaws.com/5966eb322660feab79862599/5988919f881ac604b5b81dbe/84ee803fd5b485632d9125f262544a9c/p33_Kara_head.png";                              
+    open.src = "https://trello-attachments.s3.amazonaws.com/5966eb322660feab79862599/5988919f881ac604b5b81dbe/93a5a1a905d85b9671fbe0761d00cc98/p56_Kara_head_mouth_open.png";                              
 }
+
 function chew()
 { 
 
