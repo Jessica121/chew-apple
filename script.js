@@ -1,17 +1,32 @@
 // glucose meter draw by canvas
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-ctx.fillStyle = "green";
-// ctx.fillRect(0,150,100,500);//potatoe 3
-// ctx.fillRect(0,0,100,500);//cupcake 4
-// ctx.fillRect(0,250,100,500);//apple 2
-ctx.fillRect(0,350,100,500);//chicken 1
+ctx.fillStyle = "white";
+ctx.fillRect(0,450,100,500);
 
 
 function changeGlucoseApple(){
   // glucose meter draw by canvas
-ctx.fillStyle = "green";
+ctx.fillStyle = "orange";
 ctx.fillRect(0,250,100,500);//apple 2
+
+}
+
+function changeGlucoseCake(){
+  // glucose meter draw by canvas
+ctx.fillStyle = "red";
+ctx.fillRect(0,0,100,500); //cupcake 4
+
+}
+function changeGlucosePotato(){
+  // glucose meter draw by canvas
+ctx.fillStyle = "green";
+ctx.fillRect(0,150,100,500);
+}
+function changeGlucoseChik(){
+  // glucose meter draw by canvas
+ctx.fillStyle = "blue";
+ctx.fillRect(0,350,100,500);//chicken 1
 
 }
 
@@ -80,8 +95,8 @@ addEvent(window, 'click', function (event) {
     el.setAttribute('draggable', 'true');
   
     addEvent(el, 'dragstart', function (e) {
-      e.dataTransfer.effectAllowed = 'copy'; // only dropEffect='copy' will be dropable
-      e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+      e.dataTransfer.effectAllowed = 'copy';
+      e.dataTransfer.setData('Text', this.id);
     });
   }
 
@@ -94,7 +109,6 @@ addEvent(window, 'click', function (event) {
     return false;
   });
 
-  // to get IE to work
   addEvent(bin, 'dragenter', function (e) {
     this.className = 'over';
     return false;
@@ -108,7 +122,19 @@ addEvent(window, 'click', function (event) {
     if (e.stopPropagation) e.stopPropagation(); 
 
     var el = document.getElementById(e.dataTransfer.getData('Text'));
-    
+    // el.id == food's id
+    if(el.id == "one"){
+        changeGlucoseCake();
+    }
+     if(el.id == "two"){
+        changeGlucosePotato();
+    }
+     if(el.id == "three"){
+        changeGlucoseApple();
+    }
+     if(el.id == "four"){
+        changeGlucoseChik();
+    }
     el.parentNode.removeChild(el);
 
     bin.className = '';
@@ -130,7 +156,6 @@ addEvent(window, 'click', function (event) {
           y.style.opacity -= 0.1;
         }
        showNextInstr.innerHTML = "(Now observe how glucose measurement changes)";
-       changeGlucoseApple();
       }, 050);
     }, 250);
     chew();
