@@ -13,6 +13,7 @@ swallow();
 
 function changeGlucoseApple(){
   // glucose meter draw by canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 ctx.fillStyle = "green";
 ctx.fillRect(0,250,100,500);//apple 2
 var changeExp = document.getElementById("gluExp");
@@ -22,6 +23,7 @@ changeExp.style.color = "green";
 
 function changeGlucoseCake(){
   // glucose meter draw by canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 ctx.fillStyle = "red";
 ctx.fillRect(0,0,100,500); //cupcake 4
 var changeExp = document.getElementById("gluExp");
@@ -30,6 +32,7 @@ changeExp.style.color = "red";
 }
 function changeGlucosePotato(){
   // glucose meter draw by canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 ctx.fillStyle = "orange";
 ctx.fillRect(0,150,100,500);
 var changeExp = document.getElementById("gluExp");
@@ -38,6 +41,7 @@ changeExp.style.color = "orange";
 }
 function changeGlucoseChik(){
   // glucose meter draw by canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 ctx.fillStyle = "blue";
 ctx.fillRect(0,350,100,500);//chicken 1
 var changeExp = document.getElementById("gluExp");
